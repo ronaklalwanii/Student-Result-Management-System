@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import ChevronLeftOutlined from "@mui/icons-material/ChevronLeftOutlined";
 import Spinner from "../../../utils/Spinner";
 
 const FacultyRegister = () => {
@@ -76,11 +77,6 @@ const FacultyRegister = () => {
   }, [store.errors]);
   return (
     <div className="bg-[#04bd7d] h-screen w-screen flex items-center justify-center">
-      <a href="/">
-        <button className="w-32 hover:scale-105 transition-all duration-150 rounded-lg flex items-right justify-center text-white text-base py-1 bg-[#FF2400]">
-          Home
-        </button>
-      </a>
       <div className="grid grid-cols-2">
         <div
           className={`h-[40rem] w-full bg-white flex items-center justify-center ${
@@ -254,12 +250,24 @@ const FacultyRegister = () => {
               />
             </div>
           </div>
-          <button
-            type="submit"
-            className="w-32 hover:scale-105 transition-all duration-150 rounded-lg flex items-center justify-center text-white text-base py-1 bg-[#04bd7d]"
-          >
-            Register
-          </button>
+
+          <div className="flex justify-between items-center col-span-2">
+            <button
+              type="submit"
+              className="w-32 hover:scale-105 transition-all duration-150 rounded-lg flex items-center justify-center text-white text-base py-1 bg-[#04bd7d]"
+            >
+              Register
+            </button>
+            <a href="/">
+              <button
+                type="button"
+                className="w-36 hover:scale-105 transition-all duration-150 rounded-lg flex items-right justify-center text-white text-base py-1 bg-[#FF2400]"
+              >
+                <ChevronLeftOutlined /> Back to Home
+              </button>
+            </a>
+          </div>
+
           {loading && (
             <Spinner
               message="Logging In"
